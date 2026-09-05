@@ -1,4 +1,32 @@
-  * {
+/* Page Load Fade-In Animation */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Smooth Hover Animation for Cards */
+.gallery-card, .developer-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover, .developer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -183,27 +211,66 @@
             line-height: 1.8;
             color: #555;
         }
-        /* GALLARY*/
-        /* Gallery */
-.gallery img,
-faculty-card img {
-  width: 900px;
-  height: 550px;
-  object-fit: cover;
-  border-radius: 12px;
+        
+/* Gallery Container */
+.gallery-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
 }
-.faculty-image img {
-  width: 100%;
-  max-width: 450px;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 15px; }
+
+.gallery-container h1 {
+    font-size: 2.2rem;
+    color: #1a365d;
+    margin-bottom: 8px;
+}
+
+.gallery-container .subtitle {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+/* Image Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styling */
+.gallery-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-card .caption {
+    padding: 12px;
+    font-weight: 600;
+    color: #334155;
+    font-size: 0.95rem;
+}
 
         /* FACULTY */
         .faculty-card img {
             width: 150px;
             height: 150px;
-            border-radius: 50%;
+            border-radius: 5%;
             object-fit: cover;
             border: 5px solid #d4af37;
         }
@@ -256,7 +323,7 @@ faculty-card img {
         }
 
         /* MOBILE */
-        @media(max-width: 768px) {
+        @media(max-width: 20px) {
 
             nav {
                 padding: 0 20px;
@@ -292,3 +359,87 @@ faculty-card img {
                 padding: 50px 20px;
             }
         }
+        /* Developers Section Styling */
+.developers-section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.developers-section h2 {
+    font-size: 2rem;
+    color: #1a365d;
+    margin-bottom: 8px;
+}
+
+.developers-section .subtitle {
+    color: #64748b;
+    margin-bottom: 35px;
+}
+
+/* Developers Card Grid */
+.developers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Card Container */
+.developer-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.developer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Developer Photo Frame */
+.dev-img-box {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+.dev-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Developer Details */
+.dev-info {
+    padding: 18px 15px;
+}
+
+.dev-info h3 {
+    font-size: 1.2rem;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.dev-info .role {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #c59b27;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dev-info p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
